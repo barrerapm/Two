@@ -1,0 +1,22 @@
+Join-point y point-cuts
+
+En esta parte deberemos poder deﬁnirle al framework los join-point y point-cuts. Un join-point es, en esencia,
+una condici´n sobre el metamodelo la cual se usa para determinar si un elemento es de inter´s para aplicarle este
+aspecto o no. Por ejemplo, podr´ ser las clases de la jerarqu´ Persona o todos los accessors.
+
+Las condiciones que debe permitir el framework son:
+1. Aplicar expresiones regulares, tanto sobre el nombre de la clase como sobre los m´todos.
+2. Sobre clases espec´ıﬁcas enumeradas de a una.
+3. Sobre toda una jerarqu´ de clases.
+4. Sobre m´todos espec´ıﬁcos enumerados de a uno.
+5. Sobre los m´todos que son accessors.
+6. Sobre m´todos que reciban un par´metro cuyo nombre concuerde con uno provisto por el usuario del framework.
+7. Condiciones sobre los tipos de los par´metros (si son requeridos u opcionales). Por ejemplo, quisiera interceptar
+   todos los m´todos que tienen par´metros opcionales para ver si realmente se usan.
+8. Condiciones sobre la aridad de los m´todos.
+9. Otras condiciones personalizadas que pueda programar el usuario del framework.
+Por otro lado, el framework debe poder permitir combinar cualquiera de estas condiciones mediante operaciones l´gicas:
+Y, O y NOT. A un conjunto de condiciones se lo llaman point-cuts.
+Por ejemplo, uno puede querer interceptar todos los m´todos de la jerarqu´ Persona y que tengan alg´n par´metro opcional.
+Otro ejemplo puede ser tratar de todos los accesors de la jerarqu´ Persona o todos los m´todos que reciban un par´metro
+que cumpla con la expresi´n regular ”persona”.
