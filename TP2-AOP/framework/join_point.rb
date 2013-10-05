@@ -1,0 +1,3 @@
+class JoinPoint
+
+end
