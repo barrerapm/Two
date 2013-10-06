@@ -1,9 +1,11 @@
-- La soluci´n debe presentar buenas pr´cticas de dise˜o, tales como evitar repetici´n de c´digo, buena distribuci´n de responsabilidades, manejo adecuado de excepciones, etc.
+- La solucion debe presentar buenas practicas de dise˜o, tales como evitar repeticion de codigo, buena distribucion de
+  responsabilidades, manejo adecuado de excepciones, etc.
 
-- El programa debe funcionar y se mostrar´ su funcionamiento a trav´s de los test cases que sean necesarios.
+- El programa debe funcionar y se mostrar su funcionamiento a traves de los test cases que sean necesarios.
 
-- Junto con el programa construido se deber´ entregar la documentaci´n que reﬂeje el dise˜o de la soluci´n.a
-Esta documentaci´n deber´ incluir los diagramas que muestren la estructura del sistema, justiﬁcaci´n de las decisiones de dise˜o que tomaron y toda otra explicaci´n que consideren necesaria.
+- Junto con el programa construido se debera entregar la documentacion que reﬂeje el dise˜o de la solucion.
+  Esta documentacion debera incluir los diagramas que muestren la estructura del sistema, justiﬁcacion de las decisiones
+  de dise˜o que tomaron y toda otra explicacion que consideren necesaria.
 
-- Es obligatorio que todos los integrantes participen del dise˜o y de la codiﬁcaci´n, el tutor tendr´ la potestad de realizar una evaluaci´n personal en caso de ser necesario.
-
+- Es obligatorio que todos los integrantes participen del dise˜o y de la codiﬁcacion, el tutor tendra la potestad de
+  realizar una evaluacion personal en caso de ser necesario.
