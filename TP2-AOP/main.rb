@@ -1,9 +1,1 @@
-class Main
-
-  def sayHi
-    print 'HELLO'
-
-end
-
-
-end
+puts 'Soy un string'
