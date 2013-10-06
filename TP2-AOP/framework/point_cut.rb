@@ -1,3 +1,20 @@
+require_relative '../framework/conditions/condition'
+
 class PointCut
-  # To change this template use File | Settings | File Templates.
+
+  attr_accessor :conditions
+
+  def initialize
+    @conditions = Array.new
+  end
+
+  def aplica?(clase, metodo)
+    result = true
+    @conditions.each do
+      |condition|
+      result = condition.evaluate(clase, metodo, result)
+    end
+    result
+  end
+
 end
