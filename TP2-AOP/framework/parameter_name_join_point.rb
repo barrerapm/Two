@@ -2,18 +2,16 @@ require_relative '../framework/join_point'
 
 class ParameterNameJoinPoint < JoinPoint
 
-  attr_accessor :boolean_value
-
-  def initialize(metodo)
-    @metodo = metodo
+  def initialize(nombre_de_parametro)
+    self.set_parametro(nombre_de_parametro)
   end
 
-  def tiene_este_parametro?(parametro)
-    @metodo.parameters.select {|param| param[1] == parametro.to_sym}
+  def set_parametro(nombre_de_parametro)
+    @nombre_de_parametro = nombre_de_parametro
   end
 
-  #def aplica?(clase, metodo)
-  #  return @metodo
-  #end
+  def aplica?(clase, metodo)
+    metodo.parameters.select {|param| param[1] == @nombre_de_parametro.to_sym}
+  end
 
 end
