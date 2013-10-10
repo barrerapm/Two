@@ -1,3 +1,21 @@
+require_relative '../framework/join_point'
+
 class RegexJoinPoint < JoinPoint
-  # To change this template use File | Settings | File Templates.
+
+  def initialize(expresion_regular)
+    self.set_regex(expresion_regular)
+  end
+
+  def set_regex(expresion_regular)
+    @expresion_regular = expresion_regular
+  end
+
+  def aplica?(clase, metodo)
+    if clase != nil
+      clase.to_s =~ @expresion_regular
+    else
+      metodo.to_s =~ @expresion_regular
+    end
+  end
+
 end
