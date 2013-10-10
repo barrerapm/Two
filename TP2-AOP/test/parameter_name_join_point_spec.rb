@@ -7,15 +7,15 @@ describe 'Test Nombre de Parametros' do
   jp = ParameterNameJoinPoint.new(:param1)
 
   it 'debe encontrar simbolos en los parametros del metodo' do
-    jp.set_parametro(:param1)
-    (not true).should == jp.aplica?(nil, metodo).empty?
-    jp.set_parametro(:param2)
-    (not true).should == jp.aplica?(nil, metodo).empty?
+    jp.nombre_de_parametro= :param1
+    (not true).should == jp.aplica?(nil, metodo)
+    jp.nombre_de_parametro= :param2
+    (not true).should == jp.aplica?(nil, metodo)
   end
 
   it 'NO debe encontrar ESTE simbolo en los parametros del metodo' do
-    jp.set_parametro(:param3)
-    true.should == jp.aplica?(nil, metodo).empty?
+    jp.nombre_de_parametro= :param3
+    true.should == jp.aplica?(nil, metodo)
   end
 
 end
