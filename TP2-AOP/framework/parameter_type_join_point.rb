@@ -11,7 +11,7 @@ class ParameterTypeJoinPoint < JoinPoint
   end
 
   def aplica?(clase, metodo)
-    metodo.parameters.select {|param| param[0] == @tipo_de_parametro.to_sym}
+    metodo.parameters.select {|param| param[0] == @tipo_de_parametro}
   end
 
 end
