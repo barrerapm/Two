@@ -13,7 +13,7 @@ class ParameterNameJoinPoint < JoinPoint
   end
 
   def aplica?(clase, metodo)
-    matchNombreParametros(metodo).empty?
+    not matchNombreParametros(metodo).empty?
   end
 
 end
