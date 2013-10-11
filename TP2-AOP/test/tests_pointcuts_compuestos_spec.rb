@@ -4,7 +4,7 @@ require_relative '../framework/conditions/condition'
 require_relative 'parameter_name_join_point_spec'
 require_relative 'parameter_type_join_point_spec'
 
-describe 'Tests de Pointcuts compuestos con subclases de JPs' do
+describe 'Pointcuts compuestos con subclases de JPs' do
 
   attr_accessor :point_cut, :metodo
 
@@ -36,7 +36,7 @@ describe 'Tests de Pointcuts compuestos con subclases de JPs' do
     true.should == point_cut.aplica?(nil, metodo)
   end
 
-  it 'jp6 AND jp6 probando :a :b :c' do
+  it 'jp6 AND jp6  :a :b :c' do
     metodo = ->(a,b,c) {}
     jp6 = ParameterNameJoinPoint.new(:a)
     jp6_2 = ParameterNameJoinPoint.new(:b)
@@ -51,7 +51,7 @@ describe 'Tests de Pointcuts compuestos con subclases de JPs' do
     true.should == point_cut.aplica?(nil, metodo)
   end
 
-  it 'jp6 AND jp6 probando :a :b :c :d' do
+  it 'jp6 AND jp6   :a :b :c :d' do
     metodo = ->(a,b,c) {}
     jp6 = ParameterNameJoinPoint.new(:a)
     jp6_2 = ParameterNameJoinPoint.new(:b)
