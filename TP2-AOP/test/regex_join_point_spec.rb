@@ -13,26 +13,26 @@ describe 'Test Expresiones Regulares' do
 
   it 'debe encontrar la Clase en la expresion regular' do
     jp.set_regex(/.*sona/)
-    (not true).should == jp.aplica?(Persona, nil).empty?
+    true.should == jp.aplica?(Persona, nil)
     jp.set_regex(/[A-Z].*/)
-    (not true).should == jp.aplica?(Persona, nil).empty?
+    true.should == jp.aplica?(Persona, nil)
   end
 
   it 'debe encontrar el Metodo en la expresion regular' do
     jp.set_regex(/de.*la/)
-    (not true).should == jp.aplica?(nil,  Persona.instance_methods(false).first).empty?
+    true.should == jp.aplica?(nil,  Persona.instance_methods(false).first)
     jp.set_regex(/.*cir.*/)
-    (not true).should == jp.aplica?(nil,  Persona.instance_methods(false).first).empty?
+    true.should == jp.aplica?(nil,  Persona.instance_methods(false).first)
   end
 
   it 'NO debe encontrar la Clase en la expresion regular' do
     jp.set_regex(/Person[A-Z]/)
-    true.should == jp.aplica?(Persona, nil).empty?
+    false.should == jp.aplica?(Persona, nil)
   end
 
   it 'NO debe encontrar el Metodo en la expresion regular' do
     jp.set_regex(/Decir.*/)
-    true.should == jp.aplica?(nil, Persona.instance_methods(false).first).empty?
+    false.should == jp.aplica?(nil, Persona.instance_methods(false).first)
   end
 
 end

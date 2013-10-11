@@ -14,5 +14,3 @@ class ClassHierarchyJoinPoint < JoinPoint
     clase.ancestors.any? {|una_super_clase| una_super_clase.to_s == @parametro_clase_padre.to_s}
     end
   end
-
-end

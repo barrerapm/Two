@@ -7,7 +7,8 @@ class ClassJoinPoint < JoinPoint
   end
 
   def set_parametro_clase(parametro_clase)
-    @parametro_clase = parametro_clase
+    @parametro_clase = parametro_clase.to_s
+
   end
 
   def aplica?(clase, metodo)
