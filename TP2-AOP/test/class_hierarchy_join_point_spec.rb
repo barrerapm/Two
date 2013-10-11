@@ -15,18 +15,18 @@ describe 'Test Jerarquia de Clases' do
   class Perro < Mamifero
   end
 
-  jp = ClassHierarchyJoinPoint.new('Perro')
+  jp = ClassHierarchyJoinPoint.new(Animal)
 
   it 'debe pertenecer a la jerarquia de la clase padre' do
-    jp.set_parametro_clase_padre('Animal')
-    (not true).should == jp.aplica?(Mamifero, nil).empty?
-    (not true).should == jp.aplica?(Felino, nil).empty?
-    (not true).should == jp.aplica?(Perro, nil).empty?
+    jp.set_parametro_clase_padre(Animal)
+    true.should == jp.aplica?(Mamifero, nil)
+    true.should == jp.aplica?(Felino, nil)
+    true.should == jp.aplica?(Perro, nil)
   end
 
   it 'NO debe pertenecer a la jerarquia de la clase padre' do
-    jp.set_parametro_clase('Felino')
-    true.should == jp.aplica?(Perro, nil).empty?
+    jp.set_parametro_clase_padre(Felino)
+    false.should == jp.aplica?(Perro, nil)
   end
 
 end

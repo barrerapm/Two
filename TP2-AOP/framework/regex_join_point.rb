@@ -12,9 +12,9 @@ class RegexJoinPoint < JoinPoint
 
   def aplica?(clase, metodo)
     if clase != nil
-      clase.to_s =~ @expresion_regular
+      (clase.to_s =~ @expresion_regular) != nil
     else
-      metodo.to_s =~ @expresion_regular
+      (metodo.to_s =~ @expresion_regular) != nil
     end
   end
 
