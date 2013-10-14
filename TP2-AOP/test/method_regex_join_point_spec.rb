@@ -1,7 +1,7 @@
 require 'rspec'
-require_relative '../framework/regex_join_point'
+require_relative '../framework/method_regex_join_point'
 
-describe 'Test Expresiones Regulares' do
+describe 'Test Expresiones Regulares en Metodos' do
 
   class Persona
     def decir_hola
@@ -9,25 +9,13 @@ describe 'Test Expresiones Regulares' do
     end
   end
 
-  jp = RegexJoinPoint.new(/.sona/)
-
-  it 'debe encontrar la Clase en la expresion regular' do
-    jp.set_regex(/.*sona/)
-    true.should == jp.aplica?(Persona, nil)
-    jp.set_regex(/[A-Z].*/)
-    true.should == jp.aplica?(Persona, nil)
-  end
+  jp = MethodRegexJoinPoint.new(/de,*la/)
 
   it 'debe encontrar el Metodo en la expresion regular' do
     jp.set_regex(/de.*la/)
     true.should == jp.aplica?(nil,  Persona.instance_methods(false).first)
     jp.set_regex(/.*cir.*/)
     true.should == jp.aplica?(nil,  Persona.instance_methods(false).first)
-  end
-
-  it 'NO debe encontrar la Clase en la expresion regular' do
-    jp.set_regex(/Person[A-Z]/)
-    false.should == jp.aplica?(Persona, nil)
   end
 
   it 'NO debe encontrar el Metodo en la expresion regular' do

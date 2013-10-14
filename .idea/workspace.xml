@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0439d9cd-da64-4bec-95a9-f367be8afec8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TP2-AOP/framework/accessors_method_name.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TP2-AOP/framework/arity_methods.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TP2-AOP/framework/class_method_name.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TP2-AOP/framework/class_regex_join_point.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TP2-AOP/test/class_regex_join_point_spec.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TP2-AOP/framework/method_regex_join_point.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TP2-AOP/test/method_regex_join_point_spec.rb" />
+      <change type="DELETED" beforePath="C:\Users\Pablo7\Documents\GitHub\Two\TP2-AOP\framework\regex_join_point.rb" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pablo7\Documents\GitHub\Two\TP2-AOP\test\regex_join_point_spec.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Two.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1381531413916" ignored="false" />
+    <file path="/Dummy.txt" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1381763829865" ignored="false" />
     <file path="$PROJECT_DIR$/TP2-AOP/.idea/pablo.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1380248507093" ignored="false" />
     <file path="/pablo.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1380248555078" ignored="false" />
     <file path="/clasepablo.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1380250005859" ignored="false" />
@@ -22,7 +25,11 @@
     <file path="/class_hierarchy_join_point.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1381532044108" ignored="false" />
     <file path="/class_join_point_spec.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1381450019600" ignored="false" />
     <file path="/class_hierarchy_join_point_spec.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1381450205721" ignored="false" />
-    <file path="/regex_join_point_spec.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1381450250805" ignored="false" />
+    <file path="/regex_join_point_spec.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1381764014640" ignored="false" />
+    <file path="/class_regex_join_point.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1381763903158" ignored="false" />
+    <file path="/class_regex_join_point_spec.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1381764148801" ignored="false" />
+    <file path="/method_regex_join_point_spec.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1381764223237" ignored="false" />
+    <file path="/method_regex_join_point.rb" changelist="0439d9cd-da64-4bec-95a9-f367be8afec8" time="1381764255489" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,46 +49,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="class_hierarchy_join_point_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TP2-AOP/test/class_hierarchy_join_point_spec.rb">
+      <file leaf-file-name="class_regex_join_point_spec.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TP2-AOP/test/class_regex_join_point_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="47" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
+            <state line="24" column="0" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_hierarchy_join_point.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TP2-AOP/framework/class_hierarchy_join_point.rb">
+      <file leaf-file-name="method_regex_join_point_spec.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TP2-AOP/test/method_regex_join_point_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="43" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
+            <state line="9" column="17" selection-start="189" selection-end="189" vertical-scroll-proportion="0.2545757">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_join_point_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TP2-AOP/test/class_join_point_spec.rb">
+      <file leaf-file-name="class_regex_join_point.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TP2-AOP/framework/class_regex_join_point.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="44" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0">
+            <state line="14" column="18" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_join_point.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TP2-AOP/framework/class_join_point.rb">
+      <file leaf-file-name="method_regex_join_point.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TP2-AOP/framework/method_regex_join_point.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="39" selection-start="323" selection-end="323" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="regex_join_point_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TP2-AOP/test/regex_join_point_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="28" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
+            <state line="2" column="12" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -114,19 +112,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="arity_methods.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="arity_methods.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TP2-AOP/framework/arity_methods.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="22" selection-start="445" selection-end="445" vertical-scroll-proportion="0.7448454">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom_join_point_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TP2-AOP/test/custom_join_point_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="17" column="13" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -150,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/TP2-AOP/pablo.rb" />
         <option value="$PROJECT_DIR$/TP2-AOP/main.rb" />
         <option value="$PROJECT_DIR$/TP2-AOP/clasepablo.rb" />
         <option value="$PROJECT_DIR$/TP2-AOP/hola.txt" />
@@ -159,10 +147,14 @@
         <option value="$PROJECT_DIR$/TP2-AOP/framework/parameter_type_join_point.rb" />
         <option value="$PROJECT_DIR$/TP2-AOP/test/class_join_point_spec.rb" />
         <option value="$PROJECT_DIR$/TP2-AOP/test/class_hierarchy_join_point_spec.rb" />
-        <option value="$PROJECT_DIR$/TP2-AOP/test/regex_join_point_spec.rb" />
         <option value="$PROJECT_DIR$/TP2-AOP/framework/regex_join_point.rb" />
         <option value="$PROJECT_DIR$/TP2-AOP/framework/class_hierarchy_join_point.rb" />
         <option value="$PROJECT_DIR$/TP2-AOP/framework/class_join_point.rb" />
+        <option value="$PROJECT_DIR$/TP2-AOP/framework/class_regex_join_point.rb" />
+        <option value="$PROJECT_DIR$/TP2-AOP/test/regex_join_point_spec.rb" />
+        <option value="$PROJECT_DIR$/TP2-AOP/test/class_regex_join_point_spec.rb" />
+        <option value="$PROJECT_DIR$/TP2-AOP/test/method_regex_join_point_spec.rb" />
+        <option value="$PROJECT_DIR$/TP2-AOP/framework/method_regex_join_point.rb" />
       </list>
     </option>
   </component>
@@ -217,6 +209,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -305,59 +298,24 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Pablo7\Documents\GitHub\Two\TP2-AOP\framework" />
     </key>
   </component>
-  <component name="RunManager" selected="RSpec.class_join_point_spec">
-    <configuration default="false" name="regex_join_point_spec" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
-      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
-      <module name="Two" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/TP2-AOP/test" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/TP2-AOP/test/regex_join_point_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="RSpec.method_regex_join_point_spec">
     <configuration default="false" name="parameter_name_join_point_spec" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="Two" />
@@ -460,6 +418,74 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="class_regex_join_point_spec" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="Two" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/TP2-AOP/test" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/TP2-AOP/test/class_regex_join_point_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="method_regex_join_point_spec" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="Two" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/TP2-AOP/test" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/TP2-AOP/test/method_regex_join_point_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="" />
@@ -536,19 +562,20 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="RSpec.regex_join_point_spec" />
-      <item index="1" class="java.lang.String" itemvalue="RSpec.parameter_name_join_point_spec" />
-      <item index="2" class="java.lang.String" itemvalue="RSpec.class_hierarchy_join_point_spec" />
-      <item index="3" class="java.lang.String" itemvalue="RSpec.class_join_point_spec" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="RSpec.parameter_name_join_point_spec" />
+      <item index="1" class="java.lang.String" itemvalue="RSpec.class_hierarchy_join_point_spec" />
+      <item index="2" class="java.lang.String" itemvalue="RSpec.class_join_point_spec" />
+      <item index="3" class="java.lang.String" itemvalue="RSpec.class_regex_join_point_spec" />
+      <item index="4" class="java.lang.String" itemvalue="RSpec.method_regex_join_point_spec" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="RSpec.class_join_point_spec" />
-        <item index="1" class="java.lang.String" itemvalue="RSpec.class_hierarchy_join_point_spec" />
-        <item index="2" class="java.lang.String" itemvalue="RSpec.class_hierarchy_join_point_spec" />
+        <item index="0" class="java.lang.String" itemvalue="RSpec.method_regex_join_point_spec" />
+        <item index="1" class="java.lang.String" itemvalue="RSpec.class_regex_join_point_spec" />
+        <item index="2" class="java.lang.String" itemvalue="RSpec.method_regex_join_point_spec" />
         <item index="3" class="java.lang.String" itemvalue="RSpec.class_join_point_spec" />
-        <item index="4" class="java.lang.String" itemvalue="RSpec.parameter_name_join_point_spec" />
+        <item index="4" class="java.lang.String" itemvalue="RSpec.class_hierarchy_join_point_spec" />
       </list>
     </recent_temporary>
   </component>
@@ -613,23 +640,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2590909" sideWeight="0.6712963" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26287878" sideWeight="0.6712963" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -699,41 +726,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TP2-AOP/test/dummy_join_point.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TP2-AOP/framework/regex_join_point.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="47" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TP2-AOP/framework/parameter_name_join_point.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="2" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TP2-AOP/test/parameter_name_join_point_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="77" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TP2-AOP/test/point_cuts_test_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="71" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TP2-AOP/test/parameter_type_join_point_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="7" vertical-scroll-proportion="0.0">
@@ -776,13 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TP2-AOP/test/regex_join_point_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="28" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TP2-AOP/test/tests_pointcuts_compuestos_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="4" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0">
@@ -804,9 +789,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TP2-AOP/test/class_regex_join_point_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP2-AOP/framework/method_regex_join_point.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="12" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP2-AOP/framework/class_regex_join_point.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="18" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TP2-AOP/framework/arity_methods.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="22" selection-start="445" selection-end="445" vertical-scroll-proportion="0.7448454">
+        <state line="17" column="13" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TP2-AOP/test/method_regex_join_point_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="17" selection-start="189" selection-end="189" vertical-scroll-proportion="0.2545757">
           <folding />
         </state>
       </provider>
