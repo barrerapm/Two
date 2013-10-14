@@ -2,19 +2,44 @@ require_relative 'conditions/condition'
 
 class PointCut
 
-  attr_accessor :conditions
-
   def initialize
     @conditions = Array.new
   end
 
-  def aplica?(clase, metodo)
-    result = true
-    @conditions.each do
-      |condition|
-      result = condition.evaluate(clase, metodo, result)
+  def and(join_point)
+    old_result = self.method(:aplica?)
+    self.send :define_singleton_method, :aplica? do
+    |clase, metodo|
+      old_result.call(clase, metodo) and join_point.aplica?(clase, metodo)
     end
-    result
+  end
+
+  def or(join_point)
+    old_result = self.method(:aplica?)
+    self.send :define_singleton_method, :aplica? do
+    |clase, metodo|
+      old_result.call(clase, metodo) or join_point.aplica?(clase, metodo)
+    end
+  end
+
+  def and_not(join_point)
+    old_result = self.method(:aplica?)
+    self.send :define_singleton_method, :aplica? do
+    |clase, metodo|
+      old_result.call(clase, metodo) and not join_point.aplica?(clase, metodo)
+    end
+  end
+
+  def or_not(join_point)
+    old_result = self.method(:aplica?)
+    self.send :define_singleton_method, :aplica? do
+    |clase, metodo|
+      old_result.call(clase, metodo) or not join_point.aplica?(clase, metodo)
+    end
+  end
+
+  def aplica?(clase, metodo)
+    true
   end
 
 end
