@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../framework/class_regex_join_point'
+require_relative '../../framework/join_points/class_regex'
 
 describe 'Test Expresiones Regulares en Clases' do
 
@@ -9,7 +9,7 @@ describe 'Test Expresiones Regulares en Clases' do
     end
   end
 
-  jp = ClassRegexJoinPoint.new(/.sona/)
+  jp = ClassRegex.new(/.sona/)
 
   it 'debe encontrar la Clase en la expresion regular' do
     jp.set_regex(/.*sona/)

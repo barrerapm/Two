@@ -1,6 +1,6 @@
-require_relative '../framework/join_point'
+require_relative '../../framework/join_points/join_point'
 
-class DummyJoinPoint < JoinPoint
+class Dummy < JoinPoint
 
   attr_accessor :boolean_value
 

@@ -1,6 +1,6 @@
-require_relative '../framework/join_point'
+require_relative 'join_point'
 
-class CustomJoinPoint < JoinPoint
+class Custom < JoinPoint
 
   attr_accessor :bloque
 

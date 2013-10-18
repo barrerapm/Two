@@ -1,5 +1,5 @@
-require_relative '../framework/join_point'
-require_relative '../framework/regex_join_point'
+require_relative 'join_point'
+require_relative 'regex_join_point'
 
 class arity_methods < RegexJoinPoint
 

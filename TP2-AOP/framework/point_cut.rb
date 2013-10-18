@@ -1,4 +1,4 @@
-require_relative 'conditions/condition'
+#require_relative 'conditions/condition'
 
 class PointCut
 

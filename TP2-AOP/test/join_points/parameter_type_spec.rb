@@ -1,10 +1,10 @@
 require 'rspec'
-require_relative '../framework/parameter_type_join_point'
+require_relative '../../framework/join_points/parameter_type'
 
 describe 'Test Tipo de Parametros' do
 
   metodo = ->(param1,param2=1,param3) {}
-  jp = ParameterTypeJoinPoint.new(:req)
+  jp = ParameterType.new(:req)
 
   it 'los 2 del tipo :req' do
     p 'los 2 del tipo :req'  # aca tuve que repetir codigo si o si, por culpa de como rspec hace las cosas

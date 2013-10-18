@@ -1,12 +1,15 @@
 require 'rspec'
+require_relative '../framework/join_points/join_point'
 require_relative '../framework/point_cut'
-require_relative '../framework/conditions/condition'
-require_relative 'parameter_name_join_point_spec'
-require_relative 'parameter_type_join_point_spec'
+#require_relative 'conditions/condition'
+require_relative '../framework/join_points/parameter_name'
+require_relative '../framework/join_points/parameter_type'
 
 describe 'Pointcuts compuestos con subclases de JPs' do
 
   attr_accessor :point_cut, :metodo
+
+  puts 'Pointcuts compuestos con subclases de JPs'
 
   before(:each) do
     @point_cut = PointCut.new
@@ -14,8 +17,8 @@ describe 'Pointcuts compuestos con subclases de JPs' do
 
   it 'jp6 AND jp6, orden :a :b' do
     metodo = ->(a,b,c) {}
-    jp6 = ParameterNameJoinPoint.new(:a)
-    jp6_2 = ParameterNameJoinPoint.new(:b)
+    jp6 = ParameterName.new(:a)
+    jp6_2 = ParameterName.new(:b)
     point_cut.conditions << ConditionAnd.new(jp6)
     point_cut.conditions << ConditionAnd.new(jp6_2)
     # pp point_cut.conditions
@@ -26,8 +29,8 @@ describe 'Pointcuts compuestos con subclases de JPs' do
 
   it 'jp6 AND jp6, orden :b :a' do
     metodo = ->(b,a,c) {}
-    jp6 = ParameterNameJoinPoint.new(:a)
-    jp6_2 = ParameterNameJoinPoint.new(:b)
+    jp6 = ParameterName.new(:a)
+    jp6_2 = ParameterName.new(:b)
     point_cut.conditions << ConditionAnd.new(jp6)
     point_cut.conditions << ConditionAnd.new(jp6_2)
     # pp point_cut.conditions
@@ -38,9 +41,9 @@ describe 'Pointcuts compuestos con subclases de JPs' do
 
   it 'jp6 AND jp6  :a :b :c' do
     metodo = ->(a,b,c) {}
-    jp6 = ParameterNameJoinPoint.new(:a)
-    jp6_2 = ParameterNameJoinPoint.new(:b)
-    jp6_3 = ParameterNameJoinPoint.new(:c)
+    jp6 = ParameterName.new(:a)
+    jp6_2 = ParameterName.new(:b)
+    jp6_3 = ParameterName.new(:c)
     point_cut.conditions << ConditionAnd.new(jp6)
     point_cut.conditions << ConditionAnd.new(jp6_2)
     point_cut.conditions << ConditionAnd.new(jp6_3)
@@ -53,10 +56,10 @@ describe 'Pointcuts compuestos con subclases de JPs' do
 
   it 'jp6 AND jp6   :a :b :c :d' do
     metodo = ->(a,b,c) {}
-    jp6 = ParameterNameJoinPoint.new(:a)
-    jp6_2 = ParameterNameJoinPoint.new(:b)
-    jp6_3 = ParameterNameJoinPoint.new(:c)
-    jp6_4 = ParameterNameJoinPoint.new(:d)
+    jp6 = ParameterName.new(:a)
+    jp6_2 = ParameterName.new(:b)
+    jp6_3 = ParameterName.new(:c)
+    jp6_4 = ParameterName.new(:d)
     point_cut.conditions << ConditionAnd.new(jp6)
     point_cut.conditions << ConditionAnd.new(jp6_2)
     point_cut.conditions << ConditionAnd.new(jp6_3)

@@ -1,6 +1,6 @@
-require_relative '../framework/join_point'
+require_relative 'join_point'
 
-class MethodRegexJoinPoint < JoinPoint
+class ClassRegex < JoinPoint
 
   def initialize(expresion_regular)
     self.set_regex(expresion_regular)
@@ -11,7 +11,7 @@ class MethodRegexJoinPoint < JoinPoint
   end
 
   def aplica?(clase, metodo)
-      (metodo.to_s =~ @expresion_regular) != nil
+    (clase.to_s =~ @expresion_regular) != nil
   end
 
 end

@@ -1,6 +1,6 @@
-require_relative '../framework/join_point'
+require_relative 'join_point'
 
-class accessors_method_name < join_point
+class AccessorsMethodName < JoinPoint
 
   def tieneEstaVariableConEsteMetodo (unaClase, unMetodo)
     unaClase.instance_variable_get(unMetodo)

@@ -1,6 +1,6 @@
-require_relative '../framework/join_point'
+require_relative 'join_point'
 
-class ClassHierarchyJoinPoint < JoinPoint
+class ClassHierarchy < JoinPoint
 
   def initialize(parametro_clase_padre)
     self.set_parametro_clase_padre(parametro_clase_padre)

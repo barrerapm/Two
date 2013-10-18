@@ -1,6 +1,6 @@
-require_relative '../framework/join_point'
+require_relative 'join_point'
 
-class ParameterTypeJoinPoint < JoinPoint
+class ParameterType < JoinPoint
 
   attr_accessor :tipo_de_parametro
 

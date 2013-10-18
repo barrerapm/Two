@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../framework/method_regex_join_point'
+require_relative '../../framework/join_points/method_regex'
 
 describe 'Test Expresiones Regulares en Metodos' do
 
@@ -9,7 +9,7 @@ describe 'Test Expresiones Regulares en Metodos' do
     end
   end
 
-  jp = MethodRegexJoinPoint.new(/de,*la/)
+  jp = MethodRegex.new(/de,*la/)
 
   it 'debe encontrar el Metodo en la expresion regular' do
     jp.set_regex(/de.*la/)

@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../framework/class_hierarchy_join_point'
+require_relative '../../framework/join_points/class_hierarchy'
 
 describe 'Test Jerarquia de Clases' do
 
@@ -15,7 +15,7 @@ describe 'Test Jerarquia de Clases' do
   class Perro < Mamifero
   end
 
-  jp = ClassHierarchyJoinPoint.new(Animal)
+  jp = ClassHierarchy.new(Animal)
 
   it 'debe pertenecer a la jerarquia de la clase padre' do
     jp.set_parametro_clase_padre(Animal)
