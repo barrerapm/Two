@@ -1,4 +1,4 @@
-require_relative 'join_point'
+require_relative 'joinpoint'
 
 class ClassName < Joinpoint
 
