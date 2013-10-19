@@ -2,7 +2,8 @@ require_relative 'join_points/class_name'
 
 class Framework
 
-  def initialize(array_clases)
+  # en caso de querer instanciarlo con otra cosa que no sea ObjectSpace, pasarlo como array (no como enum) al Framework
+  def initialize(array_clases=ObjectSpace.each_object(Class).to_a)
     @array_clases = array_clases
   end
 
@@ -11,6 +12,3 @@ class Framework
   end
 
 end
-
-# TODO: BORRAR: TEST CHOTO ASI NOMAS
-fwk = Framework.new(ObjectSpace.each_object(Class).to_a)  # pasarlo como array y no como enum al Framework

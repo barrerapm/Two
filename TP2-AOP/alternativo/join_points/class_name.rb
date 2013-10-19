@@ -12,15 +12,3 @@ class ClassName < Joinpoint
   end
 
 end
-
-
-# TODO: BORRAR: TEST CHOTO
-p 'JP'
-
-clases = ObjectSpace.each_object(Class)
-jp1 = ClassName.new(clases, /Class/)
-jp2 = ClassName.new(clases, /Mongo/)
-pc1 = jp1 & jp2
-#p pc1
-pc1.match
-#p (~jp).match
