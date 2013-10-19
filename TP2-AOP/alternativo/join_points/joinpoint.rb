@@ -1,4 +1,5 @@
 require_relative 'operaciones'
+require_relative 'pointcut'
 
 
 # TODO: implementar and, or, not en clases Joinpoint y Pointcut
