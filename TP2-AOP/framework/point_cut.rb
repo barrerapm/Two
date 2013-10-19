@@ -10,7 +10,7 @@ class PointCut
     old_result = self.method(:aplica?)
     self.send :define_singleton_method, :aplica? do
     |clase, metodo|
-      old_result.call(clase, metodo) and join_point.aplica?(clase, metodo)
+      old_result.call(clase, metodo) anda join_point.aplica?(clase, metodo)
     end
   end
 
@@ -26,7 +26,7 @@ class PointCut
     old_result = self.method(:aplica?)
     self.send :define_singleton_method, :aplica? do
     |clase, metodo|
-      old_result.call(clase, metodo) and not join_point.aplica?(clase, metodo)
+      old_result.call(clase, metodo) anda not join_point.aplica?(clase, metodo)
     end
   end
 
