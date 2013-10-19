@@ -1,4 +1,6 @@
-class Pointcut
+require_relative 'operaciones'
+
+class Pointcut < Operaciones
   attr_accessor :op_izquierdo, :op_derecho, :operador
 
   def initialize(op_izquierdo, operador, op_derecho)
@@ -17,7 +19,7 @@ class Pointcut
     end
   end
 
-  # TODO: terminar de codear las 3 operaciones entre enums de clases
+  # TODO: terminar de codear las 3 operaciones (de matcheo) entre enums de clases
   def interseccion(op_izq, op_der)
     # TODO: ya esta interseccion y union pero solo para el nivel de clases, falta lo mismo pero para metodos y parametros
     resultado = op_izq & op_der

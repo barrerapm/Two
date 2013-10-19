@@ -22,4 +22,8 @@ class Operaciones
 
   alias :~ :not
 
+  def to_pointcut(operador, op_derecho=nil)  # el nil es para cuando el operador es not
+    Pointcut.new(self, operador, op_derecho)
+  end
+
 end
