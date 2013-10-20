@@ -11,7 +11,7 @@ class arity_methods < RegexJoinPoint
     unMetodo.arity.abs
   end
 
-  def aplica?(unaClase, unMetodo)
+  def match?(unaClase, unMetodo)
     clase.instance_methods(false).any? {|unMetodo| unMetodo.aridad.expresion_regular}
   end
 

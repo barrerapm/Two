@@ -19,14 +19,14 @@ describe 'Test Jerarquia de Clases' do
 
   it 'debe pertenecer a la jerarquia de la clase padre' do
     jp.set_parametro_clase_padre(Animal)
-    true.should == jp.aplica?(Mamifero, nil)
-    true.should == jp.aplica?(Felino, nil)
-    true.should == jp.aplica?(Perro, nil)
+    true.should == jp.match?(Mamifero, nil)
+    true.should == jp.match?(Felino, nil)
+    true.should == jp.match?(Perro, nil)
   end
 
   it 'NO debe pertenecer a la jerarquia de la clase padre' do
     jp.set_parametro_clase_padre(Felino)
-    false.should == jp.aplica?(Perro, nil)
+    false.should == jp.match?(Perro, nil)
   end
 
 end

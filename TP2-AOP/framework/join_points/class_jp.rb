@@ -10,7 +10,7 @@ class ClassJP < JoinPoint
     @parametro_clase = parametro_clase.to_s
   end
 
-  def aplica?(clase, metodo)
+  def match?(clase, metodo)
     clase.to_s == @parametro_clase
   end
 

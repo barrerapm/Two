@@ -10,7 +10,7 @@ class ClassHierarchy < JoinPoint
     @parametro_clase_padre = parametro_clase_padre
   end
 
-  def aplica?(clase, metodo)
+  def match?(clase, metodo)
     clase.ancestors.any? {|una_super_clase| una_super_clase.to_s == @parametro_clase_padre.to_s}
     end
   end

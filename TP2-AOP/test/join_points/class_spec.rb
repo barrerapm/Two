@@ -15,14 +15,14 @@ describe 'Test Clases especificas' do
 
   it 'debe coincidir la clase' do
     jp.set_parametro_clase(Persona)
-    true.should == jp.aplica?(Persona, nil)
+    true.should == jp.match?(Persona, nil)
     jp.set_parametro_clase(Animal)
-    false.should == jp.aplica?(Persona, nil)
+    false.should == jp.match?(Persona, nil)
   end
 
   it 'NO debe coincidir la clase' do
     jp.set_parametro_clase(Animal)
-    false.should == jp.aplica?(Persona, nil)
+    false.should == jp.match?(Persona, nil)
   end
 
 end

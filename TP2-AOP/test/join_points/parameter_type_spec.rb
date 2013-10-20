@@ -14,7 +14,7 @@ describe 'Test Tipo de Parametros' do
     true.should == (resultado_lista.size == 2)
     puts
 
-    true.should == jp.aplica?(nil, metodo)
+    true.should == jp.match?(nil, metodo)
   end
 
   it 'el del tipo :opt' do
@@ -23,7 +23,7 @@ describe 'Test Tipo de Parametros' do
     resultado_lista = jp.matchTipoParametros(metodo)
     p resultado_lista
     true.should == (resultado_lista.size == 1)
-    true.should == jp.aplica?(nil, metodo)
+    true.should == jp.match?(nil, metodo)
   end
 
   it 'el del tipo :tipo_inexistente' do
@@ -32,7 +32,7 @@ describe 'Test Tipo de Parametros' do
     resultado_lista = jp.matchTipoParametros(metodo)
     p resultado_lista
     true.should == (resultado_lista.size == 0)
-    (not true).should == jp.aplica?(nil, metodo)
+    (not true).should == jp.match?(nil, metodo)
   end
 
 end
