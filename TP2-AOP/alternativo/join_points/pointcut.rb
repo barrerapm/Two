@@ -1,7 +1,7 @@
 require_relative 'operaciones'
 
 class Pointcut < Operaciones
-  attr_accessor :op_izquierdo, :op_derecho, :operador
+  attr_accessor :op_izquierdo, :op_derecho, :operador, :array_clases
 
   def initialize(op_izquierdo, operador, op_derecho)
     @op_izquierdo = op_izquierdo
@@ -11,28 +11,48 @@ class Pointcut < Operaciones
   end
 
   def match
-    #p 'op', @operador
     if @operador == :not then  # esta distincion es porque not es de aridad 1
-      @operaciones[@operador].call(@op_izquierdo.match)
+      send(@operaciones[@operador], @op_izquierdo.match)
     else    # aca podria poner 1 millon de operadores binarios si tuviese ganas
-      @operaciones[@operador].call(@op_izquierdo.match, @op_derecho.match)
+      send(@operaciones[@operador], @op_izquierdo.match, @op_derecho.match)
     end
   end
 
-  # TODO: terminar de codear las 3 operaciones (de matcheo) entre enums de clases
   def interseccion(op_izq, op_der)
-    # TODO: ya esta interseccion y union pero solo para el nivel de clases, falta lo mismo pero para metodos y parametros
-    resultado = op_izq & op_der
-    #op_izq
+    # TODO: matchear metodos y parametros
+    op_izq & op_der
   end
 
   def union(op_izq, op_der)
     op_izq | op_der
   end
 
-  # TODO: aca se necesita acceder al array_clases del framework para poder hacer
   def complemento(op)
-    #array_clases - op
+    array_clases.to_set - op
+  end
+
+  def reconstruir(string)
+    if @operador == :not then  # esta distincion es porque not es de aridad 1
+      if op_izquierdo.class == Pointcut then
+        string << "#{@operador} ("
+      else
+        string << "#{@operador} (#{@op_izquierdo.reconstruir(string)})"
+      end
+    else     # para and y or
+      if op_izquierdo.class == Pointcut then
+        #@op_izquierdo.reconstruir(string)
+        string << "( #{@operador} #{@op_derecho.reconstruir(string)})"
+      else
+        string << "(#{@op_izquierdo.reconstruir(string)} #{@operador} #{@op_derecho.reconstruir(string)})"
+      end
+    end
+    self
+  end
+
+  def to_string
+    s = ''
+    reconstruir(s)
+    s
   end
 
 end

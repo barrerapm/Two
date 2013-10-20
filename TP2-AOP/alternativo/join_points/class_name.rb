@@ -1,14 +1,15 @@
+require 'set'
 require_relative 'joinpoint'
 
 class ClassName < Joinpoint
 
-  def initialize(enum_clases, regex)
-    @array_clases = enum_clases
+  def initialize(array_clases, regex)
+    @array_clases = array_clases
     @regex = regex
   end
 
   def match
-    @array_clases.collect {|c| c.name =~ @regex}
+    @array_clases.select {|c| c.name =~ @regex}.to_set
   end
 
 end

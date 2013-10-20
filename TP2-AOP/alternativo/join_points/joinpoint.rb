@@ -9,4 +9,8 @@ class Joinpoint < Operaciones
     raise 'ESTA USTED LOCO???  LLAMO AL METODO DE LA SUPERCLASE.  REDEFINALO YA!!'
   end
 
+  def reconstruir(lista)
+    self
+  end
+
 end
