@@ -3,6 +3,8 @@ require 'set'
 require_relative '../../framework'
 require_relative '../class_name'
 require_relative '../pointcut'
+require_relative '../pointcut_bonus'
+require_relative '../joinpoint_bonus'
 
 describe 'Join points' do
 
