@@ -8,7 +8,7 @@ class Custom < JoinPoint
     @bloque = bloque
   end
 
-  def aplica?(clase, metodo)
+  def match?(clase, metodo)
     bloque.call metodo
   end
 

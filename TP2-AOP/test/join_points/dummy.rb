@@ -8,7 +8,7 @@ class Dummy < JoinPoint
     @boolean_value = boolean_value
   end
 
-  def aplica?(clase, metodo)
+  def match?(clase, metodo)
      return @boolean_value
   end
 

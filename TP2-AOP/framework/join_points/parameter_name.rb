@@ -12,7 +12,7 @@ class ParameterName < JoinPoint
     clase.instance_method(metodo).parameters.select {|param| param[1] == nombre_de_parametro}
   end
 
-  def aplica?(clase, metodo)
+  def match?(clase, metodo)
     not match_nombre_parametros(clase, metodo).empty?
   end
 

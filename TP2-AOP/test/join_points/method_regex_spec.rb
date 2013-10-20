@@ -13,14 +13,14 @@ describe 'Test Expresiones Regulares en Metodos' do
 
   it 'debe encontrar el Metodo en la expresion regular' do
     jp.set_regex(/de.*la/)
-    true.should == jp.aplica?(nil,  Persona.instance_methods(false).first)
+    true.should == jp.match?(nil,  Persona.instance_methods(false).first)
     jp.set_regex(/.*cir.*/)
-    true.should == jp.aplica?(nil,  Persona.instance_methods(false).first)
+    true.should == jp.match?(nil,  Persona.instance_methods(false).first)
   end
 
   it 'NO debe encontrar el Metodo en la expresion regular' do
     jp.set_regex(/Decir.*/)
-    false.should == jp.aplica?(nil, Persona.instance_methods(false).first)
+    false.should == jp.match?(nil, Persona.instance_methods(false).first)
   end
 
 end

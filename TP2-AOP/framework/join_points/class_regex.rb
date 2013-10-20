@@ -10,7 +10,7 @@ class ClassRegex < JoinPoint
     @expresion_regular = expresion_regular
   end
 
-  def aplica?(clase, metodo)
+  def match?(clase, metodo)
     (clase.to_s =~ @expresion_regular) != nil
   end
 

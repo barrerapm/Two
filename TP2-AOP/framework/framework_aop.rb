@@ -1,42 +1,19 @@
 class FrameworkAOP
 
-  attr_accessor :aspectos
+  attr_accessor :array_clases
 
-  def initialize
-    @aspectos = Array.new
+  # en caso de querer instanciarlo con otra cosa que no sea ObjectSpace, pasarlo como array (no como enum) al Framework
+  def initialize(array_clases=ObjectSpace.each_object(Class).to_a)
+    @array_clases = array_clases
   end
 
-  def agregar_aspecto(aspecto)
-
-  end
-
-  def listMethods(aClass)
-    puts aClass.to_s
-    aClass.instance_methods(false).each do
-      |met|
-      puts met.to_s
-
-    end
-  end
-
-  def listar_clases_y_metodos
-    ObjectSpace.each_object(Class).each do
-      |clazz|
-      p clazz.to_s
-      listMethods(clazz)
-    end
-  end
-
-  def aplicar_advices
-    ObjectSpace.each_object(Class).each do
-      |clazz|
-      clazz.instance_methods(false).each do
-        |metodo|
-        @aspectos.each do
-          |aspecto|
-          if(aspecto.point_cut.aplica?(clazz, metodo))
-            aspecto.aplicar(clazz, metodo)
-          end
+  def load_aspect(aspect)
+    @array_clases.each do |clazz|
+      methods = aspect.methods_to_intercept(clazz)
+      methods.each do |method|
+        clazz.send :alias_method, "__#{method}__", method
+        clazz.send :define_method, method do |*args|
+          aspect.interceptor.intercept(self, "__#{method}__", aspect, *args)
         end
       end
     end

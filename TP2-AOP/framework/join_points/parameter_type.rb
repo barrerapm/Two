@@ -12,7 +12,7 @@ class ParameterType < JoinPoint
     metodo.parameters.select {|param| param[0] == tipo_de_parametro}
   end
 
-  def aplica?(clase, metodo)
+  def match?(clase, metodo)
     not matchTipoParametros(metodo).empty?
   end
 

@@ -13,14 +13,14 @@ describe 'Test Expresiones Regulares en Clases' do
 
   it 'debe encontrar la Clase en la expresion regular' do
     jp.set_regex(/.*sona/)
-    true.should == jp.aplica?(Persona, nil)
+    true.should == jp.match?(Persona, nil)
     jp.set_regex(/[A-Z].*/)
-    true.should == jp.aplica?(Persona, nil)
+    true.should == jp.match?(Persona, nil)
   end
 
   it 'NO debe encontrar la Clase en la expresion regular' do
     jp.set_regex(/Person[A-Z]/)
-    false.should == jp.aplica?(Persona, nil)
+    false.should == jp.match?(Persona, nil)
   end
 
 end
