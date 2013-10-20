@@ -44,11 +44,9 @@ describe 'Join points' do
 
 
   # TESTS VARIOS
-  # TODO: test sin terminar
   it 'doble negacion de un Pointcut' do
-    pc1 = ClassName.new(fwk.array_clases, /hola/)
-    pc2 = ~~pc1
-    p pc2
+    pc = ClassName.new(fwk.array_clases, /Space/)
+    pc.match.should == (~~pc).match
   end
 
 
