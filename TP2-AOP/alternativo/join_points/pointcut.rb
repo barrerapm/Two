@@ -18,17 +18,20 @@ class Pointcut < Operaciones
     end
   end
 
+  # TODO: matchear metodos y parametros
+  # NOTA: se puede usar el mensaje & entre 2 Array y entre 2 Set, y funca del modo esperado en ambos casos
   def interseccion(op_izq, op_der)
-    # TODO: matchear metodos y parametros
-    op_izq & op_der
+    op_izq & op_der   # ese & es el mensaje (interseccion) entre arrays, no confundir con los & entre JPs y PCs
   end
 
+  # NOTA: se puede usar el mensaje | entre 2 Array y entre 2 Set, y funca del modo esperado en ambos casos
   def union(op_izq, op_der)
-    op_izq | op_der
+    op_izq | op_der   # ese | es el mensaje (union) entre arrays, no confundir con los | entre JPs y PCs
   end
 
+  # NOTA: se puede usar el mensaje - entre 2 Array y entre 2 Set, y funca del modo esperado en ambos casos
   def complemento(op)
-    array_clases.to_set - op
+    array_clases.to_set - op   # ese - es el mensaje (sustraccion) entre 2 Set
   end
 
 end
