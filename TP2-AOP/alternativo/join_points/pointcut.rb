@@ -31,6 +31,7 @@ class Pointcut < Operaciones
     array_clases.to_set - op
   end
 
+  # NOTA: ignoren este metodo! No se usa! Era parte de un BONUS que quise hacer, capaz despues lo termino
   def reconstruir(string)
     if @operador == :not then  # esta distincion es porque not es de aridad 1
       if op_izquierdo.class == Pointcut then
@@ -49,6 +50,7 @@ class Pointcut < Operaciones
     self
   end
 
+  # NOTA: ignoren este metodo! No se usa! Era parte de un BONUS que quise hacer, capaz despues lo termino
   def to_string
     s = ''
     reconstruir(s)
