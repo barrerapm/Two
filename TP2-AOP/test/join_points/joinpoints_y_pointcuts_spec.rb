@@ -141,6 +141,25 @@ describe 'Join points' do
     pc1.match.should == pc2.match
   end
 
+  it 'dos & en serie' do
+    class A1; end
+    class A2; end
+    class B1; end
+    class B2; end
+    class AB1; end
+    class AB2; end
+    array_clases = [A1,A2,B1,B2,AB1,AB2]
+    jp1 = ClassName.new(array_clases, /2/)
+    jp2 = ClassName.new(array_clases, /B/)
+    jp3 = ClassName.new(array_clases, /A/)
+    pc1 = jp1 & jp2
+    pc2 = pc1 & jp3
+    # esto demuestra que guardar el result de un & y luego hacer otro & con ese result y guardarlo
+    # da lo mismo que hacer 2 & seguidos (en serie)
+    (jp1 & jp2 & jp3).match.should == pc2.match
+    (jp1 & jp2 & jp3).match.should == [AB2].to_set
+  end
+
   # PARTE 2: RESULTADOS SOLO SOBRE NOMBRES DE METODOS
 
   # PARTE 3: RESULTADOS SOLO SOBRE NOMBRES DE PARAMETROS
