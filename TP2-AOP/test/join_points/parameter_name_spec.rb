@@ -23,4 +23,11 @@ describe 'Test Nombre de Parametros' do
     (not true).should == jp.match?(Persona, metodo)
   end
 
+  it 'NO debe encontrar ESTE simbolo en los parametros del metodo' do
+    jp1 = ParameterName.new(:param1)
+    jp2 = ParameterName.new(:param1)
+    true.should == (jp1 & jp2).match?(Persona, metodo)
+  end
+
+
 end

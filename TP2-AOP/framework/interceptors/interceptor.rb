@@ -13,7 +13,7 @@ class Interceptor
   def create_map_parameters(metodo, *args)
     map_parameters = {}
     metodo.parameters.each do |param|
-      map_parameters[param[1]] = 'G' #args[map_parameters.length]
+      map_parameters[param[1]] = args[map_parameters.length]
     end
     return map_parameters
   end
