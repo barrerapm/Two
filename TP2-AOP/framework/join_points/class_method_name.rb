@@ -1,6 +1,6 @@
 require_relative 'join_point'
 
-class class_method_name < JoinPoint
+class Class_method_name < JoinPoint
 
   def match?(clase, metodo)
     clase.instance_methods(false).any? {|unMetodo| unMetodo.to_s == metodo.to_s}
