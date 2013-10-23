@@ -22,18 +22,17 @@ class CacheSinEstadoAspect < Aspect
     metodo_en_cache = buscar_metodo_en_cache(contexto)
     if metodo_en_cache == nil
       agregar_y_ejecutar_metodo_en_cache(contexto)
-      puts 'Agregado a cache'
     else
-      puts 'Invocado desde cache '
       metodo_en_cache.resultado
     end
   end
 
   def buscar_metodo_en_cache(contexto)
-    if not @array_invocaciones.empty?
-      @array_invocaciones.detect {
+    if !@array_invocaciones.empty?
+      return @array_invocaciones.detect {
           |invocacion| validar_invocacion_en_cache(invocacion, contexto)
       }
+      return nil
     end
   end
 
