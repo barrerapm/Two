@@ -23,11 +23,11 @@ describe 'Aspecto de cache sin estado' do
 
   it 'should prueba del funcionamiento de la cache sin estado' do
     fw = FrameworkAOP.new
-    aspect_cache_con_estado = CacheSinEstadoAspect.new
-    aspect_cache_con_estado.interceptor = InterceptorInsteadOf.new
+    aspect_cache_sin_estado = CacheSinEstadoAspect.new
+    aspect_cache_sin_estado.interceptor = InterceptorInsteadOf.new
     point_cut_simple = Class_method_name.new(:caminar)
-    aspect_cache_con_estado.point_cut = point_cut_simple
-    fw.load_aspect(aspect_cache_con_estado)
+    aspect_cache_sin_estado.point_cut = point_cut_simple
+    fw.load_aspect(aspect_cache_sin_estado)
 
     persona = Persona.new(100)
     persona.caminar(10)
