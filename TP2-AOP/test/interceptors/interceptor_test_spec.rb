@@ -9,6 +9,9 @@ require_relative '../../framework/interceptors/interceptor_on_error'
 describe 'Funcionamiento de Interceptor (redefine los metodos de la clase)' do
 
   before(:each) do
+    if(Object.constants.include?(:PersonaTest))
+      Object.send(:remove_const, :PersonaTest)
+    end
     class PersonaTest
 
       attr_accessor :nombre, :fecha_nacimiento
@@ -25,10 +28,6 @@ describe 'Funcionamiento de Interceptor (redefine los metodos de la clase)' do
       end
 
     end
-  end
-
-  after(:each) do
-    Object.send(:remove_const, :PersonaTest)
   end
 
   class AspectTestPersonaInterceptor < Aspect
