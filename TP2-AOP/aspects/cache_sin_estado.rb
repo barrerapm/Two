@@ -12,10 +12,11 @@ end
 
 class CacheSinEstadoAspect < Aspect
 
-  attr_accessor :array_invocaciones
+  attr_accessor :array_invocaciones, :clase_de_invocacion
 
   def initialize
     @array_invocaciones = []
+    @clase_de_invocacion = InvocacionSinEstado
   end
 
   def exec(contexto)
@@ -32,8 +33,8 @@ class CacheSinEstadoAspect < Aspect
       return @array_invocaciones.detect {
           |invocacion| validar_invocacion_en_cache(invocacion, contexto)
       }
-      return nil
     end
+    return nil
   end
 
   def validar_invocacion_en_cache(invocacion, contexto)
@@ -43,7 +44,7 @@ class CacheSinEstadoAspect < Aspect
 
   def agregar_y_ejecutar_metodo_en_cache(contexto)
     resultado = contexto.object.send contexto.method_origin, *contexto.parameter_values.map {|param| param[1]}.to_set
-    @array_invocaciones << InvocacionSinEstado.new(contexto, resultado)
+    @array_invocaciones << @clase_de_invocacion.new(contexto, resultado)
     resultado
   end
 
