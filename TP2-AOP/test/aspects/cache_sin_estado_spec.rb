@@ -32,10 +32,9 @@ describe 'Aspecto de cache sin estado' do
     persona = Persona.new(100)
     persona.caminar(10)
     persona.vitalidad.should == 110
-    persona.caminar(50)
-    persona.vitalidad.should == 160
-    persona.caminar(10)
-    persona.vitalidad.should == 160    #no incremetna dado que en Cache sin estado no se accede al estado del objeto
+    persona.caminar(20)
+    persona.vitalidad.should == 110
+      #no incremetna dado que en Cache sin estado no se accede al estado del objeto
   end
 
 end
