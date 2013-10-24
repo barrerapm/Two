@@ -22,7 +22,7 @@ describe 'Aspecto de cache con estado' do
   end
 
   it 'should prueba del funcionamiento de la cache con estado' do
-    fw = FrameworkAOP.new
+    fw = FrameworkAOP.instance
     aspect_cache_con_estado = CacheConEstadoAspect.new
     aspect_cache_con_estado.interceptor = InterceptorInsteadOf.new
     point_cut_simple = Class_method_name.new(:nacimiento)
