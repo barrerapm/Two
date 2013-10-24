@@ -7,7 +7,9 @@ describe 'Testeo de filtrado de metodos que son accessors' do
   class Persona
     attr_accessor :nombre, :edad
 
-    def intialize
+    def initialize
+      @nombre = 'leo'
+      @edad = 20
     end
 
     def caminar
