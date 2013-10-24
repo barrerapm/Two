@@ -1,9 +1,10 @@
 require 'set'
 
-base = '../../framework'
-require_relative base + '/' + 'join_points/join_point'
+base = '..'
+require_array = ['join_points/join_point']
+require_array.each {|rb| require_relative base + '/' + rb}
 
-class ClassName < JoinPoint
+class ClassName2 < JoinPoint
 
   def initialize(array_clases, regex)
     @array_clases = array_clases
