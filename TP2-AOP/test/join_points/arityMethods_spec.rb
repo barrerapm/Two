@@ -15,10 +15,18 @@ describe 'Testeo de filtrado de metodos por aridad' do
   end
 
   it 'Encuentra el metodo' do
-   detector_aridad = Arity_methods.new([0..2])
+   detector_aridad = Arity_methods.new((0..1))
    #detector_aridad.imprimir(Persona)
     resultado = detector_aridad.match?(Persona, /hola a todos/)
 
     resultado.should == true
+  end
+
+  it 'No encuentra el metodo' do
+    detector_aridad = Arity_methods.new((7..10))
+    #detector_aridad.imprimir(Persona)
+    resultado = detector_aridad.match?(Persona, /hola a todos/)
+
+    resultado.should == false
   end
 end
