@@ -1,18 +1,28 @@
 require_relative 'join_point'
-require_relative 'regex_join_point'
 
-class arity_methods < RegexJoinPoint
+class Arity_methods
 
-  def initialize(expresion_regular)
-    super.initialize(expresion_regular)     #una posible expresion regular seria '> 3'
+  attr_accessor :rango
+
+  def initialize(rango_dado)
+    @rango = rango_dado
   end
 
-  def aridad (unMetodo)
-    unMetodo.arity.abs
+  def aridad(unMetodo)
+    bloque = proc {unMetodo.to_sym}
+    bloque.arity
   end
 
   def match?(unaClase, unMetodo)
-    clase.instance_methods(false).any? {|unMetodo| unMetodo.aridad.expresion_regular}
+    unaClase.instance_methods(false).any? do
+      |metodo|  @rango.to_a.include?(aridad(metodo))
+    end
+  end
+
+  def imprimir (unaClase)
+    unaClase.instance_methods(false).each do
+      |metodo, *arg| puts '-' + metodo.to_s
+    end
   end
 
 end
