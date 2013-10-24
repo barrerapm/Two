@@ -22,7 +22,7 @@ describe 'Aspecto de cache sin estado' do
   end
 
   it 'should prueba del funcionamiento de la cache sin estado' do
-    fw = FrameworkAOP.new
+    fw = FrameworkAOP.instance
     aspect_cache_sin_estado = CacheSinEstadoAspect.new
     aspect_cache_sin_estado.interceptor = InterceptorInsteadOf.new
     point_cut_simple = Class_method_name.new(:caminar)
