@@ -38,33 +38,29 @@ class FrameworkAOP
     Object.class_eval do
       def self.inherited(subclass)
         fw = FrameworkAOP.instance
-        fw.dynamic_classes << subclass
+        fw.listen_class(subclass)
       end
     end
-    self.on_listener
   end
 
-  def on_listener
-    Object.class_eval do
+  def listen_class(a_class)
+    a_class.class_eval do
       def self.method_added(method)
         fw = FrameworkAOP.instance
-        if(not fw.dynamic_classes.include?(self))
-          return
-        end
-        fw.off_listener; #Se deja de escuchar que metodo se agrego, para que el fw agregue metodos a las clases aspecteadas sin interceptarse
+        fw.off_listener(self)
         fw.aspects.each do |aspect|
           methods = aspect.methods_to_intercept(self)
           if(methods.include?(method))
             fw.load_aspect_to_class_method(aspect, self, method)
           end
         end
-        fw.on_listener
+        fw.listen_class(self)
       end
     end
   end
 
-  def off_listener
-    Object.class_eval do
+  def off_listener(a_class)
+    a_class.class_eval do
       def self.method_added(method_name)
       end
     end
