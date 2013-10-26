@@ -8,7 +8,8 @@ class Class_method_name < JoinPoint
   end
 
   def match?(clase, metodo)
-    clase.instance_methods(false).any? {|unMetodo| unMetodo.to_s == @metodo_buscado.to_s}
+    metodos_filtrados = clase.instance_methods(false)
+    metodos_filtrados.include?(metodo) && (metodo.to_s == @metodo_buscado.to_s)
   end
 
 end
