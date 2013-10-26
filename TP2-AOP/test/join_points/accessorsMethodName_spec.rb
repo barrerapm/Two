@@ -23,14 +23,14 @@ describe 'Testeo de filtrado de metodos que son accessors' do
 
   it 'Encuentra el método' do
     jp = AccessorsMethodName.new
-    resultado = jp.match?(Persona, /hola/)
+    resultado = jp.match?(Persona, :edad)
 
     resultado.should == true
   end
 
   it 'Encuentra el método' do
     jp = AccessorsMethodName.new
-    resultado = jp.match?(Animal, /hola/)
+    resultado = jp.match?(Animal, :saludar)
 
     resultado.should == false
   end
