@@ -14,9 +14,9 @@ class Arity_methods
   end
 
   def match?(unaClase, unMetodo)
-    unaClase.instance_methods(false).any? do
-      |metodo|  @rango.to_a.include?(aridad(unaClase, metodo))
-    end
+    filtrados = unaClase.instance_methods(false)
+
+    (filtrados.include?(unMetodo)) && @rango.to_a.include?(aridad(unaClase, unMetodo))
   end
 
 end
