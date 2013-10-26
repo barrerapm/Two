@@ -3,9 +3,10 @@ require_relative 'join_point'
 class AccessorsMethodName < JoinPoint
 
   def match?(clase, metodo)
-    clase.instance_methods(false).any? do |unMetodo|
-       es_metodo_accessor(clase, unMetodo)
-    end
+    filtrados = clase.instance_methods(false)
+
+    filtrados.include?(metodo) && es_metodo_accessor(clase, metodo)
+
   end
 end
 
@@ -17,4 +18,4 @@ def es_metodo_accessor(clase, metodo)
     cadena_variable = metodo.to_s
   end
   objeto.instance_variable_defined?("@#{cadena_variable}")
-end
+en
