@@ -14,14 +14,14 @@ describe 'Test de Join Point de detección de métodos particualres de uan clase
   it 'Encuentra el método' do
     jp = Class_method_name.new(:caminar)
 
-    resultado = jp.match?(Persona, /arg solo apra Polimorfismo/)
+    resultado = jp.match?(Persona, :caminar)
     resultado.should == true
   end
 
   it 'No encuentra el método' do
     jp2 = Class_method_name.new(:correr)
 
-    resultado2 = jp2.match?(Persona, /arg solo apra Polimorfismo/)
+    resultado2 = jp2.match?(Persona, :corrER)
     resultado2.should == false
   end
 
