@@ -17,15 +17,15 @@ describe 'Testeo de filtrado de metodos por aridad' do
   it 'Encuentra el metodo' do
    detector_aridad = Arity_methods.new((0..1))
    #detector_aridad.imprimir(Persona)
-    resultado = detector_aridad.match?(Persona, /hola a todos/)
+    resultado = detector_aridad.match?(Persona, :caminar)
 
     resultado.should == true
   end
 
   it 'No encuentra el metodo' do
-    detector_aridad = Arity_methods.new((7..10))
+    detector_aridad = Arity_methods.new((8..10))
     #detector_aridad.imprimir(Persona)
-    resultado = detector_aridad.match?(Persona, /hola a todos/)
+    resultado = detector_aridad.match?(Persona, :definir_masa)
 
     resultado.should == false
   end
