@@ -1,6 +1,6 @@
 require_relative 'join_point'
 
-class Arity_methods
+class Arity_methods < JoinPoint
 
   attr_accessor :rango
 
