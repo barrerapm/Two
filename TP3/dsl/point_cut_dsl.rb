@@ -7,12 +7,17 @@ require_array = [
     #'join_points/class_name_2',
     #'join_points/method_name_2',
     #'join_points/parameter_name_2',
-    'join_points/method_regex',
+    'join_points/class_jp',
     'join_points/class_regex',
+    'join_points/class_hierarchy',
+    'join_points/class_method_name',
+    'join_points/method_regex',
+    'join_points/accessors_method_name',
     'join_points/arity_methods',
-    'join_points/pointcut',
-    #'join_points/pointcut_bonus',
-    #'join_points/joinpoint_bonus',
+    'join_points/parameter_name',
+    'join_points/parameter_type',
+    'join_points/custom',
+    #'join_points/pointcut',
 ]
 require_array.each {|rb| require_relative base + '/' + rb}
 
