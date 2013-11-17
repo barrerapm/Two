@@ -8,6 +8,14 @@ class Pointcut < Operaciones
     @operador = operador
     @op_derecho = op_derecho
     @operaciones = {:and=>:interseccion, :or=>:union, :not=>:complemento}
+    # NOTA: interesante, no se podian definir los 3 simbolos siguientes dentro del hash de la linea
+    #       anterior (el hash entre {}) por una limitacion en la sintaxis de Ruby, que no acepta que
+    #       se le ponga :& => :interseccion y tampoco acepta &: :interseccion, pero si acepta
+    #       que se agreguen dichos simbolos accediendo al hash @operaciones usandolo "en modo array",
+    #       es decir, agregando objetos al dictionary "a la manera de Python"
+    @operaciones[:&] = :interseccion
+    @operaciones[:|] = :union
+    @operaciones[:~] = :not
   end
 
   def match
