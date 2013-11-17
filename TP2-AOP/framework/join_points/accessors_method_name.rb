@@ -18,4 +18,4 @@ def es_metodo_accessor(clase, metodo)
     cadena_variable = metodo.to_s
   end
   objeto.instance_variable_defined?("@#{cadena_variable}")
-en
+end

@@ -149,8 +149,10 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          #(expresion_regular clase es /MatchVarios/).and(expresion_regular metodo es /metodo/)
-          aridad metodo es 3..5
+          ~(expresion_regular clase es /MatchVarios/)
+          #(expresion_regular clase es /MatchVarios/).or(aridad metodo es 3..5)
+          #expresion_regular metodo es /metodo/
+          #aridad metodo es 3..5
         end
 
       end
