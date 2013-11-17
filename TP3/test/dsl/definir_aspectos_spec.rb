@@ -16,6 +16,10 @@ class Prueba3
   end
 end
 
+class Prueba4
+  def metodo_prueba; end
+end
+
 class PruebaMatchVariosJP
   def metodo_1(a);end
   def metodo_2(a, b);end
@@ -104,6 +108,31 @@ describe 'Creacion de aspectos por DSL' do
     end
     expect { Prueba3.new.metodo_prueba }.to raise_error(Exception)
     Test.last_status.should == 'complete_exception'
+  end
+
+  it 'crear aspecto con estado' do
+
+    module Aspects
+
+      aspect do
+
+        instead_of do |context|
+          @counter = @counter == nil ? 1 : @counter + 1
+          Test.last_status = @counter
+        end
+
+        cuando do
+          expresion_regular clase es /Prueba4/
+        end
+
+      end
+
+    end
+    prueba = Prueba4.new
+    prueba.metodo_prueba
+    prueba.metodo_prueba
+    prueba.metodo_prueba
+    Test.last_status.should == 3
   end
 
   it 'prueba varias condiciones' do
