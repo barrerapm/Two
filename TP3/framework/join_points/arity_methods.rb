@@ -9,8 +9,7 @@ class Arity_methods
   end
 
   def aridad(unaClase, unMetodo)
-     obj = unaClase.new
-    obj.method(unMetodo).arity
+     unaClase.instance_method(unMetodo).arity
   end
 
   def match?(unaClase, unMetodo)
