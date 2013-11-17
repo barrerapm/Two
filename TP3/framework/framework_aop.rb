@@ -50,7 +50,7 @@ class FrameworkAOP
         fw.off_listener(self)
         fw.aspects.each do |aspect|
           methods = aspect.methods_to_intercept(self)
-          if(methods.include?(method))
+          if ( methods.include?(method) )
             fw.load_aspect_to_class_method(aspect, self, method)
           end
         end

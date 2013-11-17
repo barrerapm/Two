@@ -30,12 +30,12 @@ class CacheSinEstadoAspect < Aspect
   end
 
   def buscar_metodo_en_cache(contexto)
-    if !@array_invocaciones.empty?
+    if (not @array_invocaciones.empty?)
       return @array_invocaciones.detect {
           |invocacion| validar_invocacion_en_cache(invocacion, contexto)
       }
     end
-    return nil
+    nil
   end
 
   def validar_invocacion_en_cache(invocacion, contexto)

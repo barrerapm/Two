@@ -1,3 +1,5 @@
+require 'set'
+
 require_relative '../framework/join_points/method_regex'
 require_relative '../framework/join_points/class_regex'
 require_relative '../framework/join_points/arity_methods'

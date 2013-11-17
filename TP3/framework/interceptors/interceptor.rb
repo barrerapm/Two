@@ -7,7 +7,7 @@ class Interceptor
     context.object = obj
     context.method_origin = metodo_origen
     context.parameter_values = create_map_parameters(obj.method(metodo_origen), *args)
-    return context
+    context
   end
 
   def create_map_parameters(metodo, *args)
@@ -15,7 +15,7 @@ class Interceptor
     metodo.parameters.each do |param|
       map_parameters[param[1]] = args[map_parameters.length]
     end
-    return map_parameters
+    map_parameters
   end
 
 end
