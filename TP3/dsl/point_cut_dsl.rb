@@ -1,8 +1,20 @@
 require 'set'
 
-require_relative '../framework/join_points/method_regex'
-require_relative '../framework/join_points/class_regex'
-require_relative '../framework/join_points/arity_methods'
+base = '../framework'
+
+require_array = [
+    'framework_aop',
+    #'join_points/class_name_2',
+    #'join_points/method_name_2',
+    #'join_points/parameter_name_2',
+    'join_points/method_regex',
+    'join_points/class_regex',
+    'join_points/arity_methods',
+    'join_points/pointcut',
+    #'join_points/pointcut_bonus',
+    #'join_points/joinpoint_bonus',
+]
+require_array.each {|rb| require_relative base + '/' + rb}
 
 class PointCutDSL
 
