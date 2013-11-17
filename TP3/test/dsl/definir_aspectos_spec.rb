@@ -149,20 +149,17 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          ~(expresion_regular clase es /MatchVarios/)
-          #(expresion_regular clase es /MatchVarios/).or(aridad metodo es 3..5)
-          #expresion_regular metodo es /metodo/
-          #aridad metodo es 3..5
+          (expresion_regular clase es /MatchVarios/) and (aridad metodo es 3..5) and (expresion_regular metodo es /metodo_3/)
         end
 
       end
 
     end
-    #prueba = PruebaMatchVariosJP.new
-    #(prueba.metodo_1(0) == 'complete').should == false
-    #(prueba.metodo_2(0,1) == 'complete').should == false
-    #prueba.metodo_3(0,1,2).should == 'complete'
-    #(prueba.function(0,1,2,3) == 'complete').should == false
+    prueba = PruebaMatchVariosJP.new
+    (prueba.metodo_1(0) == 'complete').should == false
+    (prueba.metodo_2(0,1) == 'complete').should == false
+    prueba.metodo_3(0,1,2).should == 'complete'
+    (prueba.function(0,1,2,3) == 'complete').should == false
 
   end
 
