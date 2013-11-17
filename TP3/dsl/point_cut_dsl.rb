@@ -1,5 +1,6 @@
 require_relative '../framework/join_points/method_regex'
 require_relative '../framework/join_points/class_regex'
+require_relative '../framework/join_points/arity_methods'
 
 class PointCutDSL
 
@@ -7,6 +8,10 @@ class PointCutDSL
 
   def expresion_regular(comparator)
     @point_cut =  comparator.regex_point_cut
+  end
+
+  def aridad(comparator)
+    @point_cut = comparator.arity_point_cut
   end
 
   def clase(compare_obj)
@@ -38,7 +43,7 @@ end
 class ClassComparator < Comparator
 
   def regex_point_cut
-    ClassRegex.new(@compare_obj)
+    ClassRegex.new(@compare_obj.value_to_compare)
   end
 
 end
@@ -47,6 +52,10 @@ class MethodComparator  < Comparator
 
   def regex_point_cut
     MethodRegex.new(@compare_obj.value_to_compare)
+  end
+
+  def arity_point_cut
+    Arity_methods.new(@compare_obj.value_to_compare)
   end
 
 end
