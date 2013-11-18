@@ -12,14 +12,14 @@ describe 'Test Nombre de Parametros' do
   jp = ParameterName.new(:param1)
 
   it 'debe encontrar simbolos en los parametros del metodo' do
-    jp.nombre_de_parametro= :param1
+    jp.simbolo_parametro= :param1
     true.should == jp.match?(Persona, metodo)
-    jp.nombre_de_parametro= :param2
+    jp.simbolo_parametro= :param2
     true.should == jp.match?(Persona, metodo)
   end
 
   it 'NO debe encontrar ESTE simbolo en los parametros del metodo' do
-    jp.nombre_de_parametro= :param3
+    jp.simbolo_parametro= :param3
     (not true).should == jp.match?(Persona, metodo)
   end
 
