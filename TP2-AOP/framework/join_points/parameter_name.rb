@@ -2,14 +2,14 @@ require_relative 'join_point'
 
 class ParameterName < JoinPoint
 
-  attr_accessor :simbolo_parametro
+  attr_accessor :nombre_de_parametro
 
   def initialize(nombre_de_parametro)
-    @simbolo_parametro = nombre_de_parametro
+    @nombre_de_parametro = nombre_de_parametro
   end
 
   def match_nombre_parametros(clase, metodo)
-    clase.instance_method(metodo).parameters.select do |param| param[1] == simbolo_parametro end
+    clase.instance_method(metodo).parameters.select {|param| param[1] == nombre_de_parametro}
   end
 
   def match?(clase, metodo)
