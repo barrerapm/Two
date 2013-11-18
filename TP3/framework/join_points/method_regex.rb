@@ -11,7 +11,7 @@ class MethodRegex < JoinPoint
   end
 
   def match?(clase, metodo)
-      (metodo.to_s =~ @expresion_regular) != nil
+    (metodo.to_s =~ @expresion_regular) != nil
   end
 
 end
