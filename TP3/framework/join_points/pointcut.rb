@@ -26,7 +26,6 @@ class Pointcut < Operaciones
     end
   end
 
-  # TODO: matchear metodos y parametros
   # NOTA: se puede usar el mensaje & entre 2 Array y entre 2 Set, y funca del modo esperado en ambos casos
   def interseccion(op_izq, op_der)
     op_izq & op_der   # ese & es el mensaje (interseccion) entre arrays, no confundir con los & entre JPs y PCs
