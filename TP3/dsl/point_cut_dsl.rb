@@ -33,8 +33,14 @@ class PointCutDSL
     @point_cut = comparator.arity_point_cut
   end
 
+  def jerarquia(comparator)
+    @point_cut = comparator.hierarchy_point_cut
+  end
+
   def clase(compare_obj)
-    ClassComparator.new(compare_obj)
+    @comparator = ClassComparator.new(compare_obj)
+    @point_cut = @comparator.class_point_cut
+    @comparator
   end
 
   def metodo(compare_obj)
@@ -42,6 +48,10 @@ class PointCutDSL
   end
 
   def es(compare_with)
+    EqualsCompare.new(compare_with)
+  end
+
+  def pertenece(compare_with)
     EqualsCompare.new(compare_with)
   end
 
@@ -63,6 +73,14 @@ class ClassComparator < Comparator
 
   def regex_point_cut
     ClassRegex.new(@compare_obj.value_to_compare)
+  end
+
+  def class_point_cut
+    ClassJP.new(@compare_obj.value_to_compare)
+  end
+
+  def hierarchy_point_cut
+    ClassHierarchy.new(@compare_obj.value_to_compare)
   end
 
 end

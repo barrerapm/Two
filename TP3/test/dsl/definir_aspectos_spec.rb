@@ -65,7 +65,6 @@ describe 'Creacion de aspectos por DSL' do
     Prueba1.new.metodo_prueba_1.should == 'hello'
   end
 
-
   it 'crear aspecto before y after' do
     module Aspects
       aspect do
@@ -163,5 +162,76 @@ describe 'Creacion de aspectos por DSL' do
 
   end
 
+
+  class Animal
+  end
+  class Perro < Animal
+    def metodo_prueba
+    end
+  end
+  class Gato < Animal
+    def metodo_prueba
+    end
+  end
+
+  it 'crear aspecto before y after con PointCut: Clase' do
+    module Aspects
+      aspect do
+
+        after do |context|
+          Test.last_status = 'complete'
+        end
+
+        before do |context|
+          Test.first_status = 'complete'
+        end
+
+        cuando do
+          clase es Perro
+        end
+
+      end
+    end
+    Test.last_status = ''
+    Test.first_status = ''
+    gato = Gato.new
+    gato.metodo_prueba
+    Test.last_status.should == ''
+    Test.first_status.should == ''
+    perro = Perro.new
+    perro.metodo_prueba
+    Test.last_status.should == 'complete'
+    Test.first_status.should == 'complete'
+  end
+
+  class Hormiga
+    def metodo_prueba
+    end
+  end
+
+  it 'crear aspecto con estado y PointCut: Jerarquia' do
+    module Aspects
+      aspect do
+        instead_of do |context|
+          @counter = @counter == nil ? 1 : @counter + 1
+          Test.last_status = @counter
+        end
+        cuando do
+          jerarquia clase pertenece Animal
+        end
+      end
+    end
+    perro = Perro.new
+    perro.metodo_prueba
+    Test.last_status.should == 1
+    hormiga = Hormiga.new
+    hormiga.metodo_prueba
+    hormiga.metodo_prueba
+    hormiga.metodo_prueba
+    Test.last_status.should == 1
+    gato = Gato.new
+    gato.metodo_prueba
+    Test.last_status.should == 2
+  end
 
 end
