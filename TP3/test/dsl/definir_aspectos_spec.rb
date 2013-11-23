@@ -242,7 +242,7 @@ describe 'Creacion de aspectos por DSL' do
     end
   end
 
-  it 'crear aspecto con estado y PointCut: ParameterName' do
+  it 'crear aspecto con PointCut: ParameterName' do
 
     module Aspects
       aspect do
@@ -259,6 +259,33 @@ describe 'Creacion de aspectos por DSL' do
 
     cuca = Cucaracha.new
     cuca.metodo1(1,2)
+    Test.last_status.should == 'complete'
+
+  end
+
+
+  class Rata
+    def come(queso)
+    end
+  end
+
+  it 'crear aspecto con PointCut: ParameterType' do
+
+    module Aspects
+      aspect do
+
+        before do |context|
+          Test.last_status = 'complete'
+        end
+
+        cuando do
+          tipo parametro es Numeric
+        end
+      end
+    end
+
+    rata = Rata.new
+    rata.come(1)
     Test.last_status.should == 'complete'
 
   end

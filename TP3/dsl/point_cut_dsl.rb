@@ -47,6 +47,12 @@ class PointCutDSL
     MethodComparator.new(compare_obj)
   end
 
+  def tipo(compare_obj)
+    @comparator = TypeComparator.new(compare_obj)
+    @point_cut = @comparator.parameter_name_point_cut
+    @comparator
+  end
+
   def parametro(comparator)
     @point_cut = comparator.parameter_name_point_cut
   end
@@ -103,6 +109,12 @@ class MethodComparator  < Comparator
     ParameterName.new(@compare_obj.value_to_compare)
   end
 
+end
+
+class TypeComparator < Comparator
+  def parameter_type_point_cut
+    ParameterType.new(@compare_obj.value_to_compare)
+  end
 end
 
 class EqualsCompare
