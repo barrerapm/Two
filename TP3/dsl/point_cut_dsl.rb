@@ -105,7 +105,7 @@ class MethodComparator  < Comparator
     Arity_methods.new(@compare_obj.value_to_compare)
   end
 
-  def parameter_name_point_cut
+  def parameter_point_cut
     ParameterName.new(@compare_obj.value_to_compare)
   end
 
