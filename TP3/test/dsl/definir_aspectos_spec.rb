@@ -1,6 +1,7 @@
 require 'rspec'
 require_relative '../../dsl/aspects'
 
+p 'definir_aspectos_spec.rb'
 
 class Prueba1
   def metodo_prueba_1; end
@@ -35,6 +36,7 @@ class Test
   end
 
 end
+
 
 describe 'Creacion de aspectos por DSL' do
 
@@ -232,6 +234,24 @@ describe 'Creacion de aspectos por DSL' do
     gato = Gato.new
     gato.metodo_prueba
     Test.last_status.should == 2
+  end
+
+
+  it 'crear aspecto con estado y PointCut: ParameterName' do
+    module Aspects
+      aspect do
+
+        before do |context|
+          Test.first_status = 'complete'
+        end
+
+        cuando do
+          parametro metodo es :param1
+        end
+      end
+    end
+    # should blabla
+
   end
 
 end

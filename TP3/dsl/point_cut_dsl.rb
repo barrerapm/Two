@@ -47,6 +47,10 @@ class PointCutDSL
     MethodComparator.new(compare_obj)
   end
 
+  def parametro(compare_obj)
+    MethodComparator.new(compare_obj)
+  end
+
   def es(compare_with)
     EqualsCompare.new(compare_with)
   end
@@ -93,6 +97,10 @@ class MethodComparator  < Comparator
 
   def arity_point_cut
     Arity_methods.new(@compare_obj.value_to_compare)
+  end
+
+  def parameter_name_point_cut
+    ParameterName.new(@compare_obj.value_to_compare)
   end
 
 end
