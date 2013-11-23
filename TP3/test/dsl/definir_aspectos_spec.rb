@@ -237,12 +237,18 @@ describe 'Creacion de aspectos por DSL' do
   end
 
 
+  class Cucaracha
+    def metodo1(param1, param2)
+    end
+  end
+
   it 'crear aspecto con estado y PointCut: ParameterName' do
+
     module Aspects
       aspect do
 
         before do |context|
-          Test.first_status = 'complete'
+          Test.last_status = 'complete'
         end
 
         cuando do
@@ -250,7 +256,10 @@ describe 'Creacion de aspectos por DSL' do
         end
       end
     end
-    # should blabla
+
+    cuca = Cucaracha.new
+    cuca.metodo1(1,2)
+    Test.last_status.should == 'complete'
 
   end
 

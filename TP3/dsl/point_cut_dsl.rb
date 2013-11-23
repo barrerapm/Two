@@ -47,8 +47,8 @@ class PointCutDSL
     MethodComparator.new(compare_obj)
   end
 
-  def parametro(compare_obj)
-    MethodComparator.new(compare_obj)
+  def parametro(comparator)
+    @point_cut = comparator.parameter_name_point_cut
   end
 
   def es(compare_with)
