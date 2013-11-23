@@ -290,4 +290,30 @@ describe 'Creacion de aspectos por DSL' do
 
   end
 
+  class Arania
+    def atrapar_con_telarania
+    end
+  end
+
+  it 'crear aspecto con PointCut: Simbolo Metodo' do
+
+    module Aspects
+      aspect do
+
+        after do |context|
+          Test.last_status = 'complete'
+        end
+
+        cuando do
+          simbolo metodo es :atrapar_con_telarania
+        end
+      end
+    end
+
+    Arania.new.atrapar_con_telarania
+    Test.last_status.should == 'complete'
+
+  end
+
+
 end

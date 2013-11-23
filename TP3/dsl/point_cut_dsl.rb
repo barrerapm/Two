@@ -29,6 +29,10 @@ class PointCutDSL
     @point_cut =  comparator.regex_point_cut
   end
 
+  def simbolo(comparator)
+    @point_cut = comparator.method_point_cut
+  end
+
   def aridad(comparator)
     @point_cut = comparator.arity_point_cut
   end
@@ -107,6 +111,10 @@ class MethodComparator  < Comparator
 
   def parameter_point_cut
     ParameterName.new(@compare_obj.value_to_compare)
+  end
+
+  def method_point_cut
+    Class_method_name.new(@compare_obj.value_to_compare)
   end
 
 end
