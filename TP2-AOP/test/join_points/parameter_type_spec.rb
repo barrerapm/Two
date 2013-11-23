@@ -3,36 +3,34 @@ require_relative '../../framework/join_points/parameter_type'
 
 describe 'Test Tipo de Parametros' do
 
-  metodo = ->(param1,param2=1,param3) {}
-  jp = ParameterType.new(:req)
+  class Prueba
+    def metodo1(param1, param2=1, param3)
+    end
+  end
 
   it 'los 2 del tipo :req' do
-    p 'los 2 del tipo :req'  # aca tuve que repetir codigo si o si, por culpa de como rspec hace las cosas
-    jp.tipo_de_parametro= :req
+    jp = ParameterType.new(:req)
+    metodo = Prueba.instance_method(:metodo1)
     resultado_lista = jp.matchTipoParametros(metodo)
-    p resultado_lista
-    true.should == (resultado_lista.size == 2)
-    puts
-
-    true.should == jp.match?(nil, metodo)
+    2.should == resultado_lista.size
+    true.should == jp.match?(Prueba, Prueba.instance_method(:metodo1))
   end
 
   it 'el del tipo :opt' do
-    p 'el del tipo :opt'  # aca tuve que repetir codigo si o si, por culpa de como rspec hace las cosas
-    jp.tipo_de_parametro= :opt
+    jp = ParameterType.new(:opt)
+    metodo = Prueba.instance_method(:metodo1)
     resultado_lista = jp.matchTipoParametros(metodo)
-    p resultado_lista
-    true.should == (resultado_lista.size == 1)
-    true.should == jp.match?(nil, metodo)
+    1.should == resultado_lista.size
+    true.should == jp.match?(Prueba, metodo)
   end
 
   it 'el del tipo :tipo_inexistente' do
     p 'el del tipo :tipo_inexistente'  # aca tuve que repetir codigo si o si, por culpa de como rspec hace las cosas
-    jp.tipo_de_parametro= :tipo_inexistente
+    jp = ParameterType.new(:tipo_inexistente)
+    metodo = Prueba.instance_method(:metodo1)
     resultado_lista = jp.matchTipoParametros(metodo)
-    p resultado_lista
-    true.should == (resultado_lista.size == 0)
-    (not true).should == jp.match?(nil, metodo)
+    0.should == resultado_lista.size
+    (not true).should == jp.match?(Prueba, metodo)
   end
 
 end
