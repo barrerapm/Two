@@ -316,4 +316,29 @@ describe 'Creacion de aspectos por DSL' do
   end
 
 
+  class Serpiente
+    def reptar
+    end
+  end
+
+  it 'crear aspecto con PointCut: Accessors de un Metodo' do
+
+    module Aspects
+      aspect do
+
+        after do
+          Test.last_status = 'complete'
+        end
+
+        cuando do
+          accessors
+        end
+      end
+    end
+
+    Serpiente.new.reptar
+    Test.last_status.should == 'complete'
+
+  end
+
 end

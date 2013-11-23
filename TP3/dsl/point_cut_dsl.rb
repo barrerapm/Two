@@ -25,6 +25,10 @@ class PointCutDSL
 
   attr_accessor :point_cut
 
+  def accessors
+    @point_cut = AccessorsMethodName.new
+  end
+
   def expresion_regular(comparator)
     @point_cut =  comparator.regex_point_cut
   end
