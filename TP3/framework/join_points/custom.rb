@@ -9,7 +9,7 @@ class Custom < JoinPoint
   end
 
   def match?(clase, metodo)
-    bloque.call metodo
+    bloque.call clase, metodo
   end
 
 end

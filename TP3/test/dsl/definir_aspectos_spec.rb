@@ -317,6 +317,7 @@ describe 'Creacion de aspectos por DSL' do
 
 
   class Serpiente
+    attr_accessor :velocidad
     def reptar
     end
   end
@@ -331,12 +332,38 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          accessors
+          accessors and (expresion_regular clase es /Serpiente/)
         end
       end
     end
 
-    Serpiente.new.reptar
+    Serpiente.new.velocidad
+    Test.last_status.should == 'complete'
+  end
+
+  class Murcielago
+    def volar
+    end
+  end
+
+  it 'crear aspecto con PointCut: Custom' do
+
+    module Aspects
+      aspect do
+
+        after do |context|
+          Test.last_status = 'complete'
+        end
+
+        cuando do
+          join_point do |clase, metodo|
+            (clase.to_s == 'Murcielago') and (metodo.to_s == 'volar')
+          end
+        end
+      end
+    end
+
+    Murcielago.new.volar
     Test.last_status.should == 'complete'
 
   end

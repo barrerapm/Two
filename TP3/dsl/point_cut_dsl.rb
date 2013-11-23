@@ -29,6 +29,10 @@ class PointCutDSL
     @point_cut = AccessorsMethodName.new
   end
 
+  def join_point(&bloque)
+    @point_cut = Custom.new(&bloque)
+  end
+
   def expresion_regular(comparator)
     @point_cut =  comparator.regex_point_cut
   end
