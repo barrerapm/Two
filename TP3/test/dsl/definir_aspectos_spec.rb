@@ -252,7 +252,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          parametro metodo es :param1
+          (parametro metodo es :param1) and (expresion_regular clase es /Cucaracha/)
         end
       end
     end
@@ -279,7 +279,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          parametro tipo es :req
+          (parametro tipo es :req) and (expresion_regular clase es /Rata/)
         end
       end
     end
