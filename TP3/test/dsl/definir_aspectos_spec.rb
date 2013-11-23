@@ -279,7 +279,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          tipo parametro es Numeric
+          parametro tipo es Numeric
         end
       end
     end

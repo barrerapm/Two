@@ -49,12 +49,12 @@ class PointCutDSL
 
   def tipo(compare_obj)
     @comparator = TypeComparator.new(compare_obj)
-    @point_cut = @comparator.parameter_name_point_cut
+    @point_cut = @comparator.parameter_point_cut
     @comparator
   end
 
   def parametro(comparator)
-    @point_cut = comparator.parameter_name_point_cut
+    @point_cut = comparator.parameter_point_cut
   end
 
   def es(compare_with)
@@ -112,7 +112,7 @@ class MethodComparator  < Comparator
 end
 
 class TypeComparator < Comparator
-  def parameter_type_point_cut
+  def parameter_point_cut
     ParameterType.new(@compare_obj.value_to_compare)
   end
 end
