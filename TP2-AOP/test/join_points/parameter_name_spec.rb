@@ -1,5 +1,6 @@
 require 'rspec'
 require_relative '../../framework/join_points/parameter_name'
+require_relative '../../framework/join_points/pointcut'
 
 describe 'Test Nombre de Parametros' do
 
@@ -28,6 +29,5 @@ describe 'Test Nombre de Parametros' do
     jp2 = ParameterName.new(:param1)
     true.should == (jp1 & jp2).match?(Persona, metodo)
   end
-
 
 end
