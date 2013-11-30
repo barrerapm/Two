@@ -57,7 +57,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          expresion_regular metodo es /metodo_prueba_1/
+          metodo es /metodo_prueba_1/
         end
 
       end
@@ -80,7 +80,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          expresion_regular clase es /Prueba2/
+          clase es /Prueba2/
         end
 
       end
@@ -103,7 +103,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          expresion_regular clase es /Prueba3/
+          clase es /Prueba3/
         end
 
       end
@@ -126,7 +126,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          expresion_regular clase es /Prueba4/
+          clase es /Prueba4/
         end
 
       end
@@ -150,7 +150,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          (expresion_regular clase es /MatchVarios/) and (aridad metodo es 3..5) and (expresion_regular metodo es /metodo_3/)
+          (clase es /MatchVarios/) and (aridad metodo es 3..5) and (metodo es /metodo_3/)
         end
 
       end
@@ -252,7 +252,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          (parametro metodo es :param1) and (expresion_regular clase es /Cucaracha/)
+          (parametro metodo es :param1) and (clase es /Cucaracha/)
         end
       end
     end
@@ -279,7 +279,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          (parametro tipo es :req) and (expresion_regular clase es /Rata/)
+          (parametro tipo es :req) and (clase es /Rata/)
         end
       end
     end
@@ -305,7 +305,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          simbolo metodo es :atrapar_con_telarania
+          metodo es :atrapar_con_telarania
         end
       end
     end
@@ -332,7 +332,7 @@ describe 'Creacion de aspectos por DSL' do
         end
 
         cuando do
-          accessors and (expresion_regular clase es /Serpiente/)
+          accessors and (clase es /Serpiente/)
         end
       end
     end
